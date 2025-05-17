@@ -41,3 +41,18 @@ if uploaded_file:
         if st.button("🔍 Predict Domain"):
             prediction = model.predict([resume_text])[0]
             st.success(f"🎯 **Predicted Domain:** {prediction}") 
+
+st.markdown("---")
+st.subheader("⭐ Rate This App")
+
+rating = st.slider('How would you rate your experience?', min_value=1, max_value=5, value=3)
+
+if st.button("Submit Rating"):
+    if rating >= 3:
+        st.success(f"🎉 Thank you for rating us {rating} out of 5!")
+        st.write("We appreciate your feedback!")
+        st.balloons()
+    else:
+        st.warning(f"Thank you for rating us {rating} out of 5.")
+        st.write("We will work on improving the app. 😞")
+    
